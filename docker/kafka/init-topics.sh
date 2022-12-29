@@ -1,0 +1,2 @@
+docker exec -t kafka kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic ecommerce.checkout.created --if-not-exists
+docker exec -t kafka kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic ecommerce.payment.created --if-not-exists
