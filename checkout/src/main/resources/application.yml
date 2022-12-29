@@ -1,0 +1,30 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: "/"
+
+springdoc:
+  swagger-ui:
+    path: "/api.html"
+
+spring:
+  application:
+    name: checkout
+  datasource:
+    url: jdbc:postgresql://172.17.0.1:5432/checkout
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: http://172.17.0.1:9092
+    group-id: group-1
+    topics:
+      checkout-created: ecommerce.checkout.created
+      payment-created: ecommerce.payment.created
